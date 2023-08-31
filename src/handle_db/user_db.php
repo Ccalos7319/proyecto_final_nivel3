@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $pass = $_POST["password"];
 
 
-    $stmt = $pdo->query("SELECT * FROM typeusers WHERE correo = '$user' AND pass = '$pass'");
+    $stmt = $pdo->query("SELECT * FROM users WHERE correo = '$user' AND role_id = 1");
 
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
