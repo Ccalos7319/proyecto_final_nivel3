@@ -1,44 +1,15 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/model/conecction.php");
-if (isset($_GET["id"])) {
-  
-    $id = $_GET["id"];
-
-
-    $stmnt = $pdo->prepare("SELECT * FROM users where id_user = :id");
-    $stmnt->bindParam(":id", $id, PDO::PARAM_INT);
-    $stmnt->execute();
-
-    $data = $stmnt->fetch(PDO::FETCH_ASSOC);
-
-    
-} else {
-    
-   
-
+if ($_SERVER["REQUEST_METHOD"] === "POST" && $_POST["correo"] !== "" && $_POST["rol"] !== "") {
+    $email = $_POST["correo"];
+    $rol=$_POST["rol"];
+    $id=$_POST["id"];
+    require_once($_SERVER["DOCUMENT_ROOT"]."/src/model/conecction.php");
+    $query = "UPDATE users SET correo ='$email', role_id ='$rol' where id_user = $id ";
+    $stmnt = $pdo->query($query);
+    header("location: /src/view/adminitrador/dashboard.php");
+}else {
+    echo "Ingrese datos datos validos";
+    header("location: /src/view/adminitrador/edit.php");
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <form action="" method="post">
-        <input type="text" name="id" hidden value="<?= $data["id_user"] ?>">
-        <label for="correo">Email del Usuario </label>
-        <input type="text" name="correo"  value="<?= $data["correo"] ?>">
-        <label for="wage">Rol de usuario </label>
-        <input type="text" name="wage" value="<?= $data[""] ?>">
-
-        <button type="submit">Save</button>
-    </form>
-</body>
-
-</html>
