@@ -23,13 +23,13 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/src/model/conecction.php");
             <input class="w-[310px] h-[30px] rounded-md" type="text" name="nombreMateria">
 
             <label class=" font-semibold" for="maestrosDisponibles">Maestros disponibles para la clase</label>
-            <select name="opcion">
+            <select class="w-[310px] h-[30px] rounded-md" name="opcion">
             <?php
     
             $stmt =  $pdo->query("SELECT * FROM users where role_id = 2");
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             ?>
-            <option value="<?= $row["id_user"] ?>"><?= $row["nombre"] ?></option>
+            <option  value="<?= $row["id_user"] ?>"><?= $row["nombre"] ?></option>
 
             <?php
             }
@@ -40,7 +40,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/src/model/conecction.php");
 
 
             <div class="flex gap-3 justify-end w-[310px] pt-3">
-                <button class="bg-[#6c757c] text-white rounded-md w-20 h-7">Close</button>
+            <a href="/src/view/adminitrador/dashboard.php " class="bg-[#6c757c] text-white rounded-md w-20 h-7 text-center">Close</a>
                 <button class="bg-[#007aff] w-20 h-7 rounded-md text-white font-semibold" type="submit">Crear</button>
 
             </div>

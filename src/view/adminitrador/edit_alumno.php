@@ -42,7 +42,7 @@ if (isset($_GET["id"])) {
             <input class="w-[310px] h-[30px] rounded-md" type="text" name="fecnac" value="<?= $data["fechanac"] ?>">
 
             <div class="flex gap-3 justify-end w-[310px] pt-3">
-                <button class="bg-[#6c757c] text-white rounded-md w-20 h-7">Close</button>
+                <a href="/src/view/adminitrador/dashboard.php " class="bg-[#6c757c] text-white rounded-md w-20 h-7 text-center">Close</a>
                 <button class="bg-[#007aff] w-32 h-7 rounded-md text-white font-semibold" type="submit">Guardar cambios</button>
 
             </div>

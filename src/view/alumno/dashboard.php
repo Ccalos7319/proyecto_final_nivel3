@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Administrador</title>
+    <title>Dashboard Alumno</title>
     <link href="/dist/output.css" rel="stylesheet">
-    <script src="/src/view/adminitrador/javaScript/script.js"defer></script>
+    <script src="/src/view/alumno/javascript/script.js"defer></script>
 </head>
 <body class="flex ">
     <nav class=" bg-[#353a40] text-white h-screen w-[25vh] flex flex-col gap-6">
@@ -14,27 +14,20 @@
             <p>Universidad</p>
         </div>
         <div class=" border-b-2 pl-3 pb-3">
-            <p>Admin</p>
-            <p>Administrador</p>
+            <p>Alumno</p>
+            <p>Saunderson Brecons</p>
         </div>
         <div class="pl-3 flex flex-col gap-3 ">
-            <p>MENU ADMINISTRADOR</p>
+            <p>MENU ALUMNO</p>
             <div class=" flex gap-3">
                 <img src="/public/permiso.png" alt="icono">
-               <a href="#" onclick="showTable(1)">Permisos</a> 
+               <a href="#" onclick="showTable(1)">Ver Calificaciones</a> 
             </div>
             <div class="flex gap-3">
                 <img src="/public/maestro.png" alt="icono">
-               <a href="#" onclick="showTable(2)">Maestro</a> 
+               <a href="#" onclick="showTable(2)">Administra tus Clases</a> 
             </div>
-            <div class="flex gap-3">
-                <img src="/public/alumno.png" alt="icono">
-               <a href="#" onclick="showTable(3)">Alumnos</a> 
-            </div>
-            <div class="flex gap-3">
-                <img src="/public/board.png" alt="icono">
-               <a href="#" onclick="showTable(4)">clases</a> 
-            </div>
+           
             
         </div>
     </nav> 
@@ -68,7 +61,7 @@
 
 
             <?php
-            require_once($_SERVER["DOCUMENT_ROOT"]."/src/view/adminitrador/tablas.php")
+            require_once($_SERVER["DOCUMENT_ROOT"]."/src/view/alumno/tablas.php")
             ?>
 
  

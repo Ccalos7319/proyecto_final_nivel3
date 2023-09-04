@@ -30,7 +30,7 @@ if (isset($_GET["id"])) {
         <form class=" w-[350px] h-[600px]  flex flex-col gap-4 justify-center  rounded-2xl bg-slate-200 p-4" action="/src/handle_db/edit_db_maestro.php" method="post">
             <h1 class="text-[30px] font-semibold">Editar Maestro</h1>
             <input type="text" name="id" hidden value="<?= $data["id_user"] ?>">
-            
+
             <label class=" font-semibold" for="correo">Correo Electronico </label>
             <input class="w-[310px] h-[30px] rounded-md" type="text" name="correo" value="<?= $data["correo"] ?>">
             <label class=" font-semibold" for="nombre">Nombre(s) </label>
@@ -42,7 +42,7 @@ if (isset($_GET["id"])) {
 
             <label class=" font-semibold" for="fecnac">Clase Asignada</label>
             <div class="flex gap-3 justify-end w-[310px] pt-3">
-                <button class="bg-[#6c757c] text-white rounded-md w-20 h-7">Close</button>
+                <a href="/src/view/adminitrador/dashboard.php " class="bg-[#6c757c] text-white rounded-md w-20 h-7 text-center">Close</a>
                 <button class="bg-[#007aff] w-32 h-7 rounded-md text-white font-semibold" type="submit">Guardar cambios</button>
 
             </div>
