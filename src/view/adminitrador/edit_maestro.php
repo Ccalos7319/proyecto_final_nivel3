@@ -38,7 +38,7 @@ if (isset($_GET["id"])) {
             <label class=" font-semibold" for="direccion">Direccion </label>
             <input class="w-[310px] h-[30px] rounded-md" type="text" name="direccion" value="<?= $data["direccion"] ?>">
             <label class=" font-semibold" for="fecnac">Fecha de nacimiento</label>
-            <input class="w-[310px] h-[30px] rounded-md" type="text" name="fecnac" value="<?= $data["fechanac"] ?>">
+            <input class="w-[310px] h-[30px] rounded-md" type="date" name="fecnac" value="<?= $data["fechanac"] ?>">
 
             <label class=" font-semibold" for="fecnac">Clase Asignada</label>
             <div class="flex gap-3 justify-end w-[310px] pt-3">

@@ -23,7 +23,7 @@
             <label class=" font-semibold" for="direccion">Direccion </label>
             <input class="w-[310px] h-[30px] rounded-md" type="text" name="direccion" >
             <label class=" font-semibold" for="fecnac">Fecha de nacimiento</label>
-            <input class="w-[310px] h-[30px] rounded-md" type="text" name="fecnac">
+            <input class="w-[310px] h-[30px] rounded-md" type="date" name="fecnac">
 
             <div class="flex gap-3 justify-end w-[310px] pt-3">
             <a href="/src/view/adminitrador/dashboard.php " class="bg-[#6c757c] text-white rounded-md w-20 h-7 text-center">Close</a>

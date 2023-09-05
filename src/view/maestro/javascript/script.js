@@ -8,6 +8,7 @@ function showTable(tableNumber) {
       }
     }
   }
+
   let menu = document.getElementById("menu");
   let button = document.getElementById("buton");
 

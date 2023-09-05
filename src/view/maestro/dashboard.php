@@ -7,7 +7,7 @@ if (!isset($_SESSION["user_id"])){
 $user_id = $_SESSION['user_id'];
 $stmt = $pdo->prepare("SELECT * FROM users WHERE id_user = ?");
 $stmt->execute([$user_id]);
-$student = $stmt->fetch(PDO::FETCH_ASSOC);
+$maestro = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -16,9 +16,9 @@ $student = $stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Alumno</title>
+    <title>Dashboard Maestro</title>
     <link href="/dist/output.css" rel="stylesheet">
-    <script src="/src/view/alumno/javascript/script.js" defer></script>
+    <script src="/src/view/maestro/javascript/script.js" defer></script>
 </head>
 
 <body class="flex ">
@@ -28,19 +28,16 @@ $student = $stmt->fetch(PDO::FETCH_ASSOC);
             <p>Universidad</p>
         </div>
         <div class=" border-b-2 pl-3 pb-3">
-            <p>Alumno</p>
-            <p><?= $student["nombre"] ?></p>
+            <p>Maestro</p>
+            <p><?= $maestro["nombre"] ?></p>
         </div>
         <div class="pl-3 flex flex-col gap-3 ">
-            <p>MENU ALUMNO</p>
+            <p>MENU MAESTRO</p>
             <div class=" flex gap-3">
-                <img src="/public/permiso.png" alt="icono">
-                <a href="#" onclick="showTable(1)">Ver Calificaciones</a>
+                <img src="/public/alumno.png" alt="icono">
+                <a href="#" onclick="showTable(1)">Alumnos</a>
             </div>
-            <div class="flex gap-3">
-                <img src="/public/maestro.png" alt="icono">
-                <a href="#" onclick="showTable(2)">Administra tus Clases</a>
-            </div>
+            
 
 
         </div>
@@ -56,7 +53,8 @@ $student = $stmt->fetch(PDO::FETCH_ASSOC);
             <div class="flex items-center gap-2  p-4">
 
 
-                <p><?= $student["nombre"] ?></p>
+                <p><?= $maestro["nombre"] ?></p>
+                
                 <a id="buton" href="#"><img src="/public/expand.png" alt="despliegue" ></a>
                 <div style="display: none;" id="menu" class=" border-solid border-2 border-gray-300 w-32 h-16 flex flex-col gap-2 shadow-xl absolute  mt-24">
                     <div class="flex gap-2">
@@ -65,7 +63,7 @@ $student = $stmt->fetch(PDO::FETCH_ASSOC);
                     </div>
                     <div class="flex gap-2">
                         <img src="/public/logout.svg" alt="logout">
-                        <a href="/src/handle_db_alumno/destroy_alumno.php" class=" text-red-400">Logout</a>
+                        <a href="/src/handle_db_maestro/destroy_maestro.php" class=" text-red-400">Logout</a>
                     </div>
 
 
@@ -86,7 +84,7 @@ $student = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
             <?php
-            require_once($_SERVER["DOCUMENT_ROOT"] . "/src/view/alumno/tablas.php")
+            require_once($_SERVER["DOCUMENT_ROOT"] . "/src/view/maestro/tablas.php")
             ?>
 
 

@@ -14,15 +14,15 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 <body>
 
 
-    <table id="table1" class=" border-solid border-2 border-indigo-600 w-[90%] ml-10" style="display: none;">
-        <thead class="">
+    <table id="table1" class=" border-solid border-2 border-gray-300 w-[90%] ml-10" style="display: none;">
+        <thead class=" ">
             <tr class="">
 
-                <th>#</th>
-                <th>Email/Usuario</th>
-                <th>Permiso</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+                <th class="border-solid border-2 border-gray-300">#</th>
+                <th class="border-solid border-2 border-gray-300">Email/Usuario</th>
+                <th class="border-solid border-2 border-gray-300">Permiso</th>
+                <th class="border-solid border-2 border-gray-300">Estado</th>
+                <th class="border-solid border-2 border-gray-300">Acciones</th>
             </tr>
 
         </thead>
@@ -51,12 +51,15 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 
                 ?>
                     <tr>
-                        <th><?= $rowper["id_user"] ?></th>
-                        <th><?= $rowper["correo"] ?></th>
-                        <th><?= $rowper["name"] ?></th>
-                        <th>Activo</td>
+                        <th class="border-solid border-2 border-gray-300"><?= $rowper["id_user"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $rowper["correo"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $rowper["name"] ?></th>
+                        <th class="border-solid border-2 border-gray-300">Activo</td>
 
-                        <th><a href="/src/view/adminitrador/edit.php?id=<?= $idpermiso ?>"><img src="/public/edit.svg" alt=""></a></th>
+                        <th class=" flex justify-center border-solid border-2 border-gray-300 ">
+                            <a href="/src/view/adminitrador/edit.php?id=<?= $idpermiso ?>"><img src="/public/edit.svg" alt=""></a>
+
+                        </th>
 
                     </tr>
             <?php
@@ -77,18 +80,18 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
             <p>lista de Maestros</p>
             <a class="bg-[#007aff] w-[140px] h-7 rounded-md text-white font-semibold text-center" href="/src/view/adminitrador/create_maestro.php">Agregar Maestro</a>
         </div>
-        <table class=" border-solid border-2 border-indigo-600 w-[90%] ml-10">
+        <table class="border-solid border-2 border-gray-300 w-[90%] ml-10">
             <thead class=" ">
                 <tr class="">
 
-                    <th>#</th>
-                    <th>DNI</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Direccion</th>
-                    <th>Fec. de Nacimiento</th>
-                    <th>Clase Asignada</th>
-                    <th>Acciones</th>
+                    <th class="border-solid border-2 border-gray-300">#</th>
+                    <th class="border-solid border-2 border-gray-300">DNI</th>
+                    <th class="border-solid border-2 border-gray-300">Nombre</th>
+                    <th class="border-solid border-2 border-gray-300">Correo</th>
+                    <th class="border-solid border-2 border-gray-300">Direccion</th>
+                    <th class="border-solid border-2 border-gray-300">Fec. de Nacimiento</th>
+                    <th class="border-solid border-2 border-gray-300">Clase Asignada</th>
+                    <th class="border-solid border-2 border-gray-300">Acciones</th>
                 </tr>
 
             </thead>
@@ -102,15 +105,15 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 
                 ?>
                     <tr class="">
-                        <th><?= $row["id"] ?> </th>
-                        <th><?= $row["dni"] ?></th>
-                        <th><?= $row["nombre"] ?></th>
-                        <th><?= $row["correo"] ?></th>
-                        <th><?= $row["direccion"] ?></th>
-                        <th><?= $row["fechanac"] ?></th>
-                        <th><?= $row["clase_asignada"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["id"] ?> </th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["dni"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["nombre"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["correo"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["direccion"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["fechanac"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["clase_asignada"] ?></th>
 
-                        <th class=" flex">
+                        <th class=" flex border-solid border-2 border-gray-300">
                             <a href="/src/view/adminitrador/edit_maestro.php?id=<?= $idmaestro ?>"><img src="/public/edit.svg" alt="edit"></a>
                             <a href="/src/handle_db/delete_db_alumno.php?id=<?= $idmaestro ?>"><img src="/public/delete.svg" alt="delete"></a>
 
@@ -133,17 +136,17 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
             <p>Informacion de Alumnos</p>
             <a class="bg-[#007aff] w-[140px] h-7 rounded-md text-white font-semibold text-center" href="/src//view/adminitrador/create_alumno.php">Agregar Alumno</a>
         </div>
-        <table class=" border-solid border-2 border-indigo-600 w-[90%] ml-10">
+        <table class=" border-solid border-2 border-gray-300 w-[90%] ml-10">
             <thead class=" ">
                 <tr class="">
 
-                    <th>#</th>
-                    <th>DNI</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Direccion</th>
-                    <th>Fec. de Nacimiento</th>
-                    <th>Acciones</th>
+                    <th class="border-solid border-2 border-gray-300">#</th>
+                    <th class="border-solid border-2 border-gray-300">DNI</th>
+                    <th class="border-solid border-2 border-gray-300">Nombre</th>
+                    <th class="border-solid border-2 border-gray-300">Correo</th>
+                    <th class="border-solid border-2 border-gray-300">Direccion</th>
+                    <th class="border-solid border-2 border-gray-300">Fec. de Nacimiento</th>
+                    <th class="border-solid border-2 border-gray-300">Acciones</th>
                 </tr>
 
             </thead>
@@ -155,13 +158,13 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
                     $idalumno = $row["id_user"];
                 ?>
                     <tr class="">
-                        <th><?= $row["id_user"] ?> </th>
-                        <th><?= $row["dni"] ?></th>
-                        <th><?= $row["nombre"] ?></th>
-                        <th><?= $row["correo"] ?></th>
-                        <th><?= $row["direccion"] ?></th>
-                        <th><?= $row["fechanac"] ?></th>
-                        <th class=" flex">
+                        <th class="border-solid border-2 border-gray-300"><?= $row["id_user"] ?> </th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["dni"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["nombre"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["correo"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["direccion"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["fechanac"] ?></th>
+                        <th class=" flex justify-center border-solid border-2 border-gray-300">
                             <a href="/src/view/adminitrador/edit_alumno.php?id=<?= $idalumno ?>"><img src="/public/edit.svg" alt="edit"></a>
                             <a href="/src/handle_db/delete_db_alumno.php?id=<?= $idalumno ?>"><img src="/public/delete.svg" alt="delete"></a>
 
@@ -186,15 +189,15 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
             <p>Informacion de Clases</p>
             <a class="bg-[#007aff] w-[140px] h-7 rounded-md text-white font-semibold text-center" href="/src/view/adminitrador/create_clase.php">Agregar Clase</a>
         </div>
-        <table class=" border-solid border-2 border-indigo-600 w-[90%] ml-10">
+        <table class=" border-solid border-2 border-gray-300 w-[90%] ml-10">
             <thead class=" ">
                 <tr class="">
 
-                    <th>#</th>
-                    <th>Clase</th>
-                    <th>Maestro</th>
-                    <th>Alumnos inscritos</th>
-                    <th>Acciones</th>
+                    <th class="border-solid border-2 border-gray-300">#</th>
+                    <th class="border-solid border-2 border-gray-300">Clase</th>
+                    <th class="border-solid border-2 border-gray-300">Maestro</th>
+                    <th class="border-solid border-2 border-gray-300">Alumnos inscritos</th>
+                    <th class="border-solid border-2 border-gray-300">Acciones</th>
 
                 </tr>
 
@@ -220,16 +223,16 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
             ");
                 while ($row = $stmnt->fetch(PDO::FETCH_ASSOC)) {
                     $idclase = $row["id"];
-                    
+
                 ?>
                     <tr class="">
-                        <th><?= $row["id"] ?> </th>
-                        <th><?= $row["clase"] ?></th>
-                        <th><?= $row["maestro"] ?></th>
-                        <th><?= $row["Num_Alumnos_Inscritos"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["id"] ?> </th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["clase"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["maestro"] ?></th>
+                        <th class="border-solid border-2 border-gray-300"><?= $row["Num_Alumnos_Inscritos"] ?></th>
 
 
-                        <th class=" flex">
+                        <th class=" flex justify-center border-solid border-2 border-gray-300">
                             <a href="/src/view/adminitrador/edit_clase.php?id=<?= $idclase ?>"><img src="/public/edit.svg" alt="edit"></a>
                             <a href="/src/handle_db/delete_db_clase.php?id=<?= $idclase ?>"><img src="/public/delete.svg" alt="delete"></a>
 
