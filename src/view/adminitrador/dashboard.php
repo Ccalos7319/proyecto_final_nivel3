@@ -47,9 +47,21 @@
                 <p>Home</p>
             </div>
             <div class="flex items-center gap-2  p-4">
+
+
                 <p>Administrador</p>
-                <img src="/public/expand.png" alt="despliegue">
+                <a id="buton" href="#"><img src="/public/expand.png" alt="despliegue" ></a>
+                <div style="display: none;" id="menu" class=" border-solid border-2 border-gray-300 w-32 h-16 flex flex-col gap-2 shadow-xl absolute  mt-24">
+                    
+                    <div class="flex gap-2">
+                        <img src="/public/logout.svg" alt="logout">
+                        <a href="/src/handle_db_alumno/destroy_alumno.php" class=" text-red-400">Logout</a>
+                    </div>
+
+
+                </div>
             </div>
+
         </nav>
         <section class=" bg-[#f5f6fa] h-[90vh] flex flex-col gap-6">
             <div class=" flex justify-between p-4" >

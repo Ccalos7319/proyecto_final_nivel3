@@ -8,3 +8,17 @@ function showTable(tableNumber) {
       }
     }
   }
+  let menu = document.getElementById("menu");
+  let button = document.getElementById("buton");
+
+  button.addEventListener("click", function() {
+    if (menu.style.display !== "flex") {
+      menu.style.display = "flex";
+    } else {
+      menu.style.display = "none";
+    }
+    
+
+   
+
+  })

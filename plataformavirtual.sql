@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-09-2023 a las 06:11:06
+-- Tiempo de generación: 05-09-2023 a las 20:37:24
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -38,8 +38,11 @@ CREATE TABLE `curso` (
 
 INSERT INTO `curso` (`id`, `name`) VALUES
 (2, 'Biologia'),
-(3, 'Biomedica'),
+(7, 'biologia marina'),
+(3, 'BiomedicaIndustrial'),
 (4, 'Ciencias Ambientales'),
+(6, 'fisica'),
+(8, 'fisica nuclear'),
 (1, 'Guarani'),
 (5, 'quimica');
 
@@ -55,6 +58,17 @@ CREATE TABLE `curso_alumno` (
   `curso_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `curso_alumno`
+--
+
+INSERT INTO `curso_alumno` (`id`, `alumno_id`, `curso_id`) VALUES
+(4, 16, 3),
+(5, 16, 7),
+(7, 19, 7),
+(8, 19, 5),
+(9, 19, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -66,14 +80,6 @@ CREATE TABLE `curso_maestro` (
   `maestro_id` int(11) NOT NULL,
   `curso_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `curso_maestro`
---
-
-INSERT INTO `curso_maestro` (`id`, `maestro_id`, `curso_id`) VALUES
-(1, 9, 2),
-(2, 12, 3);
 
 -- --------------------------------------------------------
 
@@ -106,6 +112,7 @@ CREATE TABLE `users` (
   `dni` varchar(100) DEFAULT NULL,
   `nombre` varchar(100) DEFAULT NULL,
   `correo` varchar(100) DEFAULT NULL,
+  `passwrd` varchar(100) NOT NULL,
   `direccion` varchar(100) DEFAULT NULL,
   `fechanac` date DEFAULT NULL,
   `role_id` int(11) DEFAULT NULL
@@ -115,18 +122,13 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id_user`, `dni`, `nombre`, `correo`, `direccion`, `fechanac`, `role_id`) VALUES
-(7, NULL, NULL, 'admin@admin', NULL, NULL, 1),
-(8, NULL, NULL, 'admin@admin', NULL, NULL, 1),
-(9, '', 'carlosalfredovanessa', 'maestro@maestro123', 'Urb. Villa Santa Luisa B14', '1992-06-21', 2),
-(10, NULL, NULL, 'alumno@alumno22', NULL, NULL, 2),
-(12, '', 'carlosalfredo', 'carlos4049@hotmail.com', 'Urb. Villa Santa Luisa B14', '1992-06-21', 2),
-(13, '73193564', 'alfredo', 'alumno@alumno22', 'Urb. Villa Santa Luisa B14', '1992-06-21', 2),
-(14, '73193563', 'carlosalfredo', 'alumno@alumno22', 'Urb. Villa Santa Luisa B14', '1992-06-21', 3),
-(15, '73193563', 'carlosalfredo', 'alumno@alumno22', 'Urb. Villa Santa Luisa B14', '1992-06-21', 3),
-(16, '47563184', 'vanessa', 'zuvel_1549@hotmail.com', 'Urb. Villa Santa Luisa B14', '1992-09-19', 3),
-(17, '30407991', 'manuel  Leo', 'mlvh31@gmail.com', 'Juan Pablo V y G N-8', '1970-12-16', 2),
-(18, '30407991', 'alfredo', 'bababa@baba', 'Juan Pablo V y G N-8', '1970-12-16', 2);
+INSERT INTO `users` (`id_user`, `dni`, `nombre`, `correo`, `passwrd`, `direccion`, `fechanac`, `role_id`) VALUES
+(8, NULL, NULL, 'admin@admin', 'admin', NULL, NULL, 1),
+(9, '', 'carlosalfredovanessa', 'maestro@maestro', 'maestro', 'Urb. Villa Santa Luisa B14', '1992-06-21', 2),
+(14, '73193563', 'carlosalfredo', 'alumno@alumno', 'alumno', 'Urb. Villa Santa Luisa B14', '1992-06-21', 3),
+(16, '47563184', 'vanessa', 'zuvel_1549@hotmail.com', '', 'Urb. Villa Santa Luisa B14', '1992-09-19', 3),
+(17, '30407991', 'manuel  Leo huayamarez', 'mlvh31@gmail.com', '', 'Juan Pablo V y G N-8', '1970-12-16', 2),
+(19, '73193565', 'emanuel', 'emanuel@emanuel.com', '', 'Juan Pablo V y G N8', '2000-04-01', 3);
 
 --
 -- Índices para tablas volcadas
@@ -176,19 +178,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `curso`
 --
 ALTER TABLE `curso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `curso_alumno`
 --
 ALTER TABLE `curso_alumno`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `curso_maestro`
 --
 ALTER TABLE `curso_maestro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -200,7 +202,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Restricciones para tablas volcadas

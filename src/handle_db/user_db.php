@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    
 
-    $stmt = $pdo->prepare("SELECT id_user, role_id FROM users WHERE correo = ? ");
+    $stmt = $pdo->prepare("SELECT id_user, role_id FROM users WHERE correo = ? AND passwrd = '$password' ");
     $stmt->execute([$email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
    
@@ -27,6 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("location: /src/view/alumno/dashboard.php");
         }
         exit();
+    } else {
+        header("location: /src/view/login.php");
     }
     
 }
