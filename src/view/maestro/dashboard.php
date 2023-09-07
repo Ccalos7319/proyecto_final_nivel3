@@ -59,7 +59,7 @@ $maestro = $stmt->fetch(PDO::FETCH_ASSOC);
                 <div style="display: none;" id="menu" class=" border-solid border-2 border-gray-300 w-32 h-16 flex flex-col gap-2 shadow-xl absolute  mt-24">
                     <div class="flex gap-2">
                         <img src="/public/account.svg" alt="acount">
-                        <a href="#" onclick="showTable(3)">Perfil</a>
+                        <a href="#" onclick="showTable(2)">Perfil</a>
                     </div>
                     <div class="flex gap-2">
                         <img src="/public/logout.svg" alt="logout">
@@ -72,15 +72,7 @@ $maestro = $stmt->fetch(PDO::FETCH_ASSOC);
 
         </nav>
         <section class=" bg-[#f5f6fa] h-[90vh] flex flex-col gap-6">
-            <div class=" flex justify-between p-4 mt-8">
-                <p class=" pl-4 font-semibold text-2xl ">Dashboard</p>
-
-
-            </div>
-            <div class=" bg-white w-[700px] h-[80px] flex flex-col justify-center pl-6 ml-6 shadow-lg">
-                <p>Bienvenido</p>
-                <p>Seleciona la accion que quieras realizar en las pestañas del menu de la izquierda</p>
-            </div>
+           
 
 
             <?php

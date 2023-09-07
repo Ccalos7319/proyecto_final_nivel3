@@ -74,15 +74,7 @@ $student = $stmt->fetch(PDO::FETCH_ASSOC);
 
         </nav>
         <section class=" bg-[#f5f6fa] h-[90vh] flex flex-col gap-6">
-            <div class=" flex justify-between p-4 mt-8">
-                <p class=" pl-4 font-semibold text-2xl ">Dashboard</p>
-
-
-            </div>
-            <div class=" bg-white w-[700px] h-[80px] flex flex-col justify-center pl-6 ml-6 shadow-lg">
-                <p>Bienvenido</p>
-                <p>Seleciona la accion que quieras realizar en las pestañas del menu de la izquierda</p>
-            </div>
+            
 
 
             <?php

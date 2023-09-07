@@ -14,7 +14,8 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 <body>
 
 
-    <table id="table1" class=" border-solid border-2 border-gray-300 w-[90%] ml-10" style="display: none;">
+
+    <table id="table1" class=" border-solid border-2 border-gray-300 w-[90%] ml-10 mt-[140px]" style="display: none;">
         <thead class=" ">
             <tr class="">
 
@@ -74,8 +75,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
         </tbody>
     </table>
 
-
-    <div id="table2" style="display: none;">
+    <div id="table2" class="mt-[140px]" style="display: none;">
         <div class="flex justify-between w-[90%] ml-10 p-3 ">
             <p>lista de Maestros</p>
             <a class="bg-[#007aff] w-[140px] h-7 rounded-md text-white font-semibold text-center" href="/src/view/adminitrador/create_maestro.php">Agregar Maestro</a>
@@ -131,7 +131,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
         </table>
     </div>
 
-    <div id="table3" style="display: none;">
+    <div id="table3" class="mt-[140px]" style="display: none;">
         <div class="flex justify-between w-[90%] ml-10 p-3 ">
             <p>Informacion de Alumnos</p>
             <a class="bg-[#007aff] w-[140px] h-7 rounded-md text-white font-semibold text-center" href="/src//view/adminitrador/create_alumno.php">Agregar Alumno</a>
@@ -182,9 +182,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
         </table>
     </div>
 
-
-
-    <div id="table4" style="display: none;">
+    <div id="table4" class="mt-[140px]" style="display: none;">
         <div class="flex justify-between w-[90%] ml-10 p-3 ">
             <p>Informacion de Clases</p>
             <a class="bg-[#007aff] w-[140px] h-7 rounded-md text-white font-semibold text-center" href="/src/view/adminitrador/create_clase.php">Agregar Clase</a>
@@ -249,6 +247,23 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
             </tbody>
         </table>
     </div>
+
+    <div id="table5">
+        <div class=" flex justify-between p-4">
+            <p class=" pl-4 font-semibold text-2xl">Dashboard</p>
+            <div class="flex gap-2">
+                <p class=" text-blue-600">Home</p>
+                <p>/</p>
+                <p>Dashboard</p>
+            </div>
+
+        </div>
+        <div class=" bg-white w-[700px] h-[80px] flex flex-col justify-center pl-6 ml-6 shadow-lg">
+            <p>Bienvenido</p>
+            <p>Seleciona la accion que quieras realizar en las pestañas del menu de la izquierda</p>
+        </div>
+    </div>
+
 
 </body>
 

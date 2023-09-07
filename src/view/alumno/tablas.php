@@ -17,7 +17,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 <body>
 
 
-    <table id="table1" class="border-solid border-2 border-gray-300  w-[90%] ml-10" style="display: none;">
+    <table id="table1" class="border-solid border-2 border-gray-300  w-[90%] ml-10 mt-[140px]" style="display: none;">
         <thead class=" border-solid border-2 border-gray-300">
             <tr class=" ">
 
@@ -61,7 +61,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
     </table>
 
 
-    <div id="table2" style="display: none;">
+    <div id="table2" class="mt-[140px]" style="display: none;">
         <div class="flex justify-between w-[50%] ml-10 p-3 ">
             <p>Esquema de clases</p>
         </div>
@@ -98,8 +98,8 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 
 
                             <th class="flex justify-center mt-2">
-                                <a  href="/src/handle_db_alumno/delete_db_materias.php?id=<?= $idMateria ?>"><img src="/public/delete.svg" alt=""></a>
-                            
+                                <a href="/src/handle_db_alumno/delete_db_materias.php?id=<?= $idMateria ?>"><img src="/public/delete.svg" alt=""></a>
+
                             </th>
 
                         </tr>
@@ -139,7 +139,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 
     </div>
 
-    <div class="  h-[90vh]" id="table3" style="display: none;">
+    <div id="table3"  class="mt-[140px] h-[90vh]" style="display: none;">
         <div class=" flex justify-between p-4">
             <p class=" pl-4 font-semibold text-2xl">Editar datos de perfil</p>
             <div class="flex gap-2">
@@ -159,7 +159,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
         $student = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
 
-        <form method="post" action="/src/handle_db_alumno/edit_db_alumno.php" class="flex flex-col w-[90%] ml-4 gap-4">
+        <form method="post" action="/src/handle_db_alumno/edit_db_alumno.php" class="flex flex-col w-[60%] ml-4 p-6 gap-4 border-solid border-2 border-gray-300 rounded-xl ">
             <p>Informacion de Usuario</p>
             <input type="text" hidden value="<?= $student["id_user"] ?>" name="id">
             <label class=" font-semibold" for="matricula">Matricula</label>
@@ -180,6 +180,15 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 
     </div>
 
+    <div id="table4" >
+        <div class=" flex justify-between p-4 mt-8">
+            <p class=" pl-4 font-semibold text-2xl ">Dashboard</p>
+        </div>
+        <div class=" bg-white w-[700px] h-[80px] flex flex-col justify-center pl-6 ml-6 shadow-lg">
+            <p>Bienvenido</p>
+            <p>Seleciona la accion que quieras realizar en las pestañas del menu de la izquierda</p>
+        </div>
+    </div>
 </body>
 
 </html>
