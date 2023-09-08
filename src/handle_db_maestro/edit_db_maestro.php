@@ -5,11 +5,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && $_POST["correo"] !== "" &&  $_POST[
    
     $email = $_POST["correo"];
     $nombre=$_POST["nombre"];
+    $contrasena = $_POST["password"];
     $id=$_POST["id"];
     $direcion = $_POST["direccion"];
     $fecnac = $_POST["fechanac"];
    
-    $query = "UPDATE users SET correo ='$email', nombre ='$nombre', direccion = '$direcion', fechanac= '$fecnac'  where id_user = $id ";
+    $hash = password_hash($contrasena,PASSWORD_DEFAULT);
+
+    $query = "UPDATE users SET correo ='$email', passwrd= '$hash', nombre ='$nombre', direccion = '$direcion', fechanac= '$fecnac'  where id_user = $id ";
 
 
     $stmnt = $pdo->query($query);

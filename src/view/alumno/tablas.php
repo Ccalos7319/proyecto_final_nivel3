@@ -139,7 +139,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 
     </div>
 
-    <div id="table3"  class="mt-[140px] h-[90vh]" style="display: none;">
+    <div id="table3"  class="mt-[100px] h-[90vh]" style="display: none;">
         <div class=" flex justify-between p-4">
             <p class=" pl-4 font-semibold text-2xl">Editar datos de perfil</p>
             <div class="flex gap-2">
@@ -162,8 +162,9 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
         <form method="post" action="/src/handle_db_alumno/edit_db_alumno.php" class="flex flex-col w-[60%] ml-4 p-6 gap-4 border-solid border-2 border-gray-300 rounded-xl ">
             <p>Informacion de Usuario</p>
             <input type="text" hidden value="<?= $student["id_user"] ?>" name="id">
+
             <label class=" font-semibold" for="matricula">Matricula</label>
-            <input class=" rounded-lg h-8" type="text" name="matricula" id="matricula">
+            <input class=" rounded-lg h-8 bg-slate-300" type="text" name="matricula" id="matricula" value="<?= $student["codigo_alumno"] ?>"  readonly >
             <label class=" font-semibold" for="correo">Correo Electronico</label>
             <input class=" rounded-lg h-8" type="email" name="correo" id="correo" value="<?= $student["correo"] ?>">
             <label class=" font-semibold" for="password">Contraseña ingresa para cambiar la contraseña</label>

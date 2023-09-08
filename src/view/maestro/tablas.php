@@ -93,12 +93,11 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
         <form method="post" action="/src/handle_db_maestro/edit_db_maestro.php" class="flex flex-col w-[60%] ml-4 p-6 gap-4 border-solid border-2 border-gray-300 rounded-xl ">
             <p>Informacion de Usuario</p>
             <input type="text" hidden value="<?= $maestro["id_user"] ?>" name="id">
-            <label class=" font-semibold" for="matricula">Matricula</label>
-            <input class=" rounded-lg h-8" type="text" name="matricula" id="matricula">
+            
             <label class=" font-semibold" for="correo">Correo Electronico</label>
             <input class=" rounded-lg h-8" type="email" name="correo" id="correo" value="<?= $maestro["correo"] ?>">
             <label class=" font-semibold" for="password">Contraseña ingresa para cambiar la contraseña</label>
-            <input class=" rounded-lg h-8" type="password" name="password" id="password">
+            <input class=" rounded-lg h-8" type="password" name="password" id="password" value="<?= $maestro["passwrd"] ?> ">
             <label class=" font-semibold" for="nombre">Nombre(s)</label>
             <input class=" rounded-lg h-8" type="text" name="nombre" id="nombre" value="<?= $maestro["nombre"] ?>">
             <label class=" font-semibold" for="direccion">Direccíon</label>
