@@ -1,42 +1,80 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
 
-
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+   
+    $usuario = $_POST['email'];
+    $contrasena =$_POST['password'];
 
+    $consulta = "SELECT id_user, passwrd, role_id FROM users WHERE correo = :usuario";
+    $stmt = $pdo->prepare($consulta);
+    $stmt->bindParam(':usuario', $usuario, PDO::PARAM_STR);
+    $stmt->execute();
+    $usuarioInfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    
+    if ($usuarioInfo) {
+        $contrasenaAlmacenada = $usuarioInfo['passwrd'];
+        $roleID = $usuarioInfo['role_id'];
 
-    $stmt = $pdo->prepare("SELECT  id_user, passwrd, role_id FROM users WHERE correo = ?");
-    $stmt->execute([$email]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user) {
-        // $hashed_password = $user["passwrd"];
-        // $verify = password_verify($password, $hashed_password);
-
-        // if ($verify) {
+        if ($roleID === 1) { 
            
-        // } else {
-        //     header("location: /src/view/login.php");
-        // }
-
-         session_start();
-            $_SESSION['user_id'] = $user['id_user'];
-            $_SESSION['role_id'] = $user['role_id'];
-
-
-            if ($user['role_id'] == 1) {
+            if ($contrasena === $contrasenaAlmacenada) {
+                // Contraseña correcta, establece la sesión y redirige al usuario a la página de inicio
+                $_SESSION['user_id'] = $usuarioInfo['id_user'];
+                $_SESSION['user_role'] = $roleID; 
                 header("location: /src/view/adminitrador/dashboard.php");
-            } elseif ($user['role_id'] == 2) {
-                header('Location: /src/view/maestro/dashboard.php');
-            } elseif ($user['role_id'] == 3) {
-                header("location: /src/view/alumno/dashboard.php");
+                exit();
+            } elseif (password_verify($contrasena, $contrasenaAlmacenada)) {
+                $_SESSION['user_id'] = $usuarioInfo['id_user'];
+                $_SESSION['user_role'] = $roleID; 
+                header("location: /src/view/adminitrador/dashboard.php");
+                exit();
+            } else {
+                
+                header("location: /src/view/login.php");
             }
-            exit();
+        } elseif ($roleID === 2 ) { 
+            
+            if (password_verify($contrasena, $contrasenaAlmacenada)) {
+                // Contraseña correcta, establece la sesión y redirige al usuario a la página de inicio
+                $_SESSION['user_id'] = $usuarioInfo['id_user'];
+                $_SESSION['user_role'] = $roleID; 
+                header('Location: /src/view/maestro/dashboard.php'); 
+                exit();
+            } elseif ($contrasena === $contrasenaAlmacenada) {
+                $_SESSION['user_id'] = $usuarioInfo['id_user'];
+                $_SESSION['user_role'] = $roleID; 
+                header('Location: /src/view/maestro/dashboard.php'); 
+                exit();
+            } else {
+                header("location: /src/view/login.php");
+                
+            }
+        } elseif ($roleID === 3) {
+            if (password_verify($contrasena, $contrasenaAlmacenada)) {
+                // Contraseña correcta, establece la sesión y redirige al usuario a la página de inicio
+                $_SESSION['user_id'] = $usuarioInfo['id_user'];
+                $_SESSION['user_role'] = $roleID; 
+                header("location: /src/view/alumno/dashboard.php"); 
+                exit();
+            } elseif ($contrasena === $contrasenaAlmacenada) {
+                $_SESSION['user_id'] = $usuarioInfo['id_user'];
+                $_SESSION['user_role'] = $roleID; 
+                header("location: /src/view/alumno/dashboard.php"); 
+                exit();
+            }else {
+               
+                header("location: /src/view/login.php");
+            }
+        }
     } else {
+        
         header("location: /src/view/login.php");
     }
 }
+
+?>
+

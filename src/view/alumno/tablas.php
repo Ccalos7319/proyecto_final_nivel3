@@ -167,7 +167,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/src/model/conecction.php");
             <label class=" font-semibold" for="correo">Correo Electronico</label>
             <input class=" rounded-lg h-8" type="email" name="correo" id="correo" value="<?= $student["correo"] ?>">
             <label class=" font-semibold" for="password">Contraseña ingresa para cambiar la contraseña</label>
-            <input class=" rounded-lg h-8" type="password" name="password" id="password">
+            <input class=" rounded-lg h-8" type="password" name="password" id="password" value="<?= $student["passwrd"]?>">
             <label class=" font-semibold" for="nombre">Nombre(s)</label>
             <input class=" rounded-lg h-8" type="text" name="nombre" id="nombre" value="<?= $student["nombre"] ?>">
             <label class=" font-semibold" for="direccion">Direccíon</label>
